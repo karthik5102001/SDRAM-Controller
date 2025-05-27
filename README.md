@@ -17,7 +17,7 @@ To perform a write operation in DRAM:
 - Current flows **into or from the capacitor**, depending on the bitline voltage.
 - The charge/discharge behavior depends on **oxide thickness**, **operating voltage**, and other physical properties.
 
-![Sense Amplifier](https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-27%20105808.png)
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-27%20105808.png" alt="Sense Amplifier" width="350"/>
 
 ---
 
