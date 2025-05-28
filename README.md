@@ -78,32 +78,44 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193820.png" alt="Micro Archi" width="350"/>
 
-
-### READ to 1K DRAM cell
+### READ Operation (1K DRAM Cell)
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20194203.png" alt="READ Waveform" width="350"/>
-   - Put R/W high (Read) and Chip Select (CE) in low state
-   - **tRC(Read Cycle Time)** : tRC tells how fast memory can READ 
-     - **Eg** : if tRC is 500ns, then DRAM can supply 1 bit word at the rate of 2 Mhz.
-   - **tAC(Access Time)** : Maximum length of time after the input address is changed before the output data(Dout) is valid.
 
-### WRITE to 1K DRAM cell
-
-<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/write.png" alt="Write Waveform" width="350"/>
-   - R/W to low (Write operation).
-   - **tWC(Write Cycle Time)** : Tells how fast memory can write. 
-   - **tWP(Write Pulse Width)** : specifies how long the input data must be present before the next read or write operation. 
-   - **tAW(Address to Write Delay time)** : time between the address changing and the R/W input going low.
-   - While writing we think R/W as input as a **clock** signal.
-
-### REFRESH the 1K DRAM cell
-
-<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/ref.png" alt="Write Waveform" width="350"/>
-   - CE is pulled **HIGH**, the address is changed.
-   - R/W is used as **strobe or clock**.
-   - Internally, the data is read out and then written back into the same location at full voltage, by this way the logic levels are restored(or refreshed).
+- Set **R/W = High** for Read, and **CE = Low** to enable the chip.
+- **tRC (Read Cycle Time)**:  
+  - Defines how fast memory can read.  
+  - *Example*: If `tRC = 500ns`, DRAM can supply 1-bit words at a 2 MHz rate.
+- **tAC (Access Time)**:  
+  - Maximum delay after the address is set before valid data appears on `Dout`.
 
 ---
+
+###  WRITE Operation (1K DRAM Cell)
+
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/write.png" alt="Write Waveform" width="350"/>
+
+- Set **R/W = Low** to perform a write operation.
+- **tWC (Write Cycle Time)**:  
+  - Determines how quickly a write can be completed.
+- **tWP (Write Pulse Width)**:  
+  - Duration for which data must be held stable during write.
+- **tAW (Address to Write Delay)**:  
+  - Minimum delay between setting the address and starting the write (R/W goes low).
+- **R/W signal acts like a clock** during write operations.
+
+---
+
+###  REFRESH Operation (1K DRAM Cell)
+
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/ref.png" alt="Refresh Waveform" width="350"/>
+
+- Set **CE = High**, then change the address to target the row to be refreshed.
+- **R/W acts as a strobe or clock** during refresh.
+- Internally, data is **read** and **rewritten** to restore charge levels and preserve data integrity.
+
+---
+
 
 ## Second Generation DRAM Cell
 
