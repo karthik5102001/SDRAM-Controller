@@ -4,7 +4,7 @@
 
 This README describes the basic principles of an SDRAM (Synchronous Dynamic Random-Access Memory) controller design, including operations like writing, reading, and refreshing DRAM cells. It also covers technical insights into DRAM cell behavior and structure.
 
-<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20122526.png" alt="DRAM" width="350"/>
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20122526.png" alt="DRAM" width="300"/>
 
 ---
 
@@ -78,18 +78,44 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193820.png" alt="Micro Archi" width="350"/>
 
-
-### READ Signals
+### READ Operation (1K DRAM Cell)
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20194203.png" alt="READ Waveform" width="350"/>
 
+- Set **R/W = High** for Read, and **CE = Low** to enable the chip.
+- **tRC (Read Cycle Time)**:  
+  - Defines how fast memory can read.  
+  - *Example*: If `tRC = 500ns`, DRAM can supply 1-bit words at a 2 MHz rate.
+- **tAC (Access Time)**:  
+  - Maximum delay after the address is set before valid data appears on `Dout`.
 
 ---
 
-## Summary
+###  WRITE Operation (1K DRAM Cell)
 
-This SDRAM controller outlines the core operations essential for DRAM:
-- Writing and reading with Wordline and Bitline interactions
-- Managing destructive reads
-- Implementing periodic refresh mechanisms
-- Understanding physical constraints of first-generation DRAM cells
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/write.png" alt="Write Waveform" width="350"/>
+
+- Set **R/W = Low** to perform a write operation.
+- **tWC (Write Cycle Time)**:  
+  - Determines how quickly a write can be completed.
+- **tWP (Write Pulse Width)**:  
+  - Duration for which data must be held stable during write.
+- **tAW (Address to Write Delay)**:  
+  - Minimum delay between setting the address and starting the write (R/W goes low).
+- **R/W signal acts like a clock** during write operations.
+
+---
+
+###  REFRESH Operation (1K DRAM Cell)
+
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/ref.png" alt="Refresh Waveform" width="350"/>
+
+- Set **CE = High**, then change the address to target the row to be refreshed.
+- **R/W acts as a strobe or clock** during refresh.
+- Internally, data is **read** and **rewritten** to restore charge levels and preserve data integrity.
+
+---
+
+
+## Second Generation DRAM Cell
+
