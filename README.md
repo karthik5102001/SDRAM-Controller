@@ -82,26 +82,26 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 ### READ to 1K DRAM cell
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20194203.png" alt="READ Waveform" width="350"/>
-- Put R/W high (Read) and Chip Select (CE) in low state
-- **tRC(Read Cycle Time)** : tRC tells how fast memory can READ 
-  - **Eg** : if tRC is 500ns, then DRAM can supply 1 bit word at the rate of 2 Mhz.
-- **tAC(Access Time)** : Maximum length of time after the input address is changed before the output data(Dout) is valid.
+   - Put R/W high (Read) and Chip Select (CE) in low state
+   - **tRC(Read Cycle Time)** : tRC tells how fast memory can READ 
+     - **Eg** : if tRC is 500ns, then DRAM can supply 1 bit word at the rate of 2 Mhz.
+   - **tAC(Access Time)** : Maximum length of time after the input address is changed before the output data(Dout) is valid.
 
 ### WRITE to 1K DRAM cell
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/write.png" alt="Write Waveform" width="350"/>
-- R/W to low (Write operation).
-- **tWC(Write Cycle Time)** : Tells how fast memory can write. 
-- **tWP(Write Pulse Width)** : specifies how long the input data must be present before the next read or write operation. 
-- **tAW(Address to Write Delay time)** : time between the address changing and the R/W input going low.
-- While writing we think R/W as input as a **clock** signal.
+   - R/W to low (Write operation).
+   - **tWC(Write Cycle Time)** : Tells how fast memory can write. 
+   - **tWP(Write Pulse Width)** : specifies how long the input data must be present before the next read or write operation. 
+   - **tAW(Address to Write Delay time)** : time between the address changing and the R/W input going low.
+   - While writing we think R/W as input as a **clock** signal.
 
 ### REFRESH the 1K DRAM cell
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/ref.png" alt="Write Waveform" width="350"/>
-- CE is pulled **HIGH**, the address is changed.
-- R/W is used as **strobe or clock**.
-- Internally, the data is read out and then written back into the same location at full voltage, by this way the logic levels are restored(or refreshed).
+   - CE is pulled **HIGH**, the address is changed.
+   - R/W is used as **strobe or clock**.
+   - Internally, the data is read out and then written back into the same location at full voltage, by this way the logic levels are restored(or refreshed).
 
 ---
 
