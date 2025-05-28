@@ -4,7 +4,7 @@
 
 This README describes the basic principles of an SDRAM (Synchronous Dynamic Random-Access Memory) controller design, including operations like writing, reading, and refreshing DRAM cells. It also covers technical insights into DRAM cell behavior and structure.
 
-![DRAM](https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20122526.png)
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20122526.png" alt="DRAM" width="350"/>
 
 ---
 
@@ -17,7 +17,7 @@ To perform a write operation in DRAM:
 - Current flows **into or from the capacitor**, depending on the bitline voltage.
 - The charge/discharge behavior depends on **oxide thickness**, **operating voltage**, and other physical properties.
 
-![Sense Amplifier](https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-27%20105808.png)
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-27%20105808.png" alt="Sense Amplifier" width="350"/>
 
 ---
 
@@ -74,13 +74,15 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 - **Column lines**: Bitlines  
 - **Row lines**: Wordlines
 
-![Rows and Column](https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193738.png)
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193738.png" alt="Rows and Column" width="350"/>
 
-![Micro Archi](https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193820.png)
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193820.png" alt="Micro Archi" width="350"/>
+
 
 ### READ Signals
 
-![READ Waveform](https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20194203.png)
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20194203.png" alt="READ Waveform" width="350"/>
+
 
 ---
 
