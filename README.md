@@ -81,7 +81,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 ### 3 Transistor DRAM Cell
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/3T%20DRAM%20Cell.png" alt="3T DRAM Cell" width="350"/>
-- It consist of separate Column and row lines for read and write.
+- It consist of separate column and row lines for read and write.
 
 ### READ Operation (1K DRAM Cell)
 
