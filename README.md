@@ -78,6 +78,11 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193820.png" alt="Micro Archi" width="350"/>
 
+### 3 Transistor DRAM Cell
+
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/3T%20DRAM%20Cell.png" alt="3T DRAM Cell" width="350"/>
+- It consist of separate Column and row lines for read and write.
+
 ### READ Operation (1K DRAM Cell)
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20194203.png" alt="READ Waveform" width="350"/>
@@ -113,9 +118,15 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 - Set **CE = High**, then change the address to target the row to be refreshed.
 - **R/W acts as a strobe or clock** during refresh.
 - Internally, data is **read** and **rewritten** to restore charge levels and preserve data integrity.
+- For REFRESH operation we actually give **column** address first and then **row** address (which indicate REFRESH operation).
+- For normal operation we give **Row** address first and **Column** address next.
 
 ---
 
+### Disadvantage 
+- No Clock, will restrict the speed of operation.
+- Lesser memory access.
+- Separate Row and Column pins, which further if we need to improve the design (adding more memory) we have to increase the pins, which increase the space.
 
 ## Second Generation DRAM Cell
 
