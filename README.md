@@ -133,7 +133,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 ### Second Generation DRAM Cell
 
 - The major difference from the first generation is the use of a **single transistor per cell** to store data.
-    <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Single%20T.png" alt="1T" width="200"/>
+  <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Single%20T.png" alt="1T" width="200"/>
 - Offers improvements in flexibility and performance with support for:
   - **Multiple address inputs**
   - **Multiple memory arrays**
@@ -156,7 +156,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
   - Allows **single-bit access** by disabling one of the arrays.
     <div style="display: flex; gap: 10px;">
   <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193738.png" alt="Image 1" width="200"/>
-  <img src="[https://example.com/image2.png](https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193738.png)" alt="Image 2" width="200"/>
+  <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193738.png" alt="Image 2" width="200"/>
 </div>
 
 #### Address & Control:
