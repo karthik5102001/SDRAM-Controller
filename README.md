@@ -128,5 +128,52 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 - Lesser memory access.
 - Separate Row and Column pins, which further if we need to improve the design (adding more memory) we have to increase the pins, which increase the space.
 
-## Second Generation DRAM Cell
+---
+
+### Second Generation DRAM Cell
+
+- The major difference from the first generation is the use of a **single transistor per cell** to store data.
+    <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Single%20T.png" alt="1T" width="200"/>
+- Offers improvements in flexibility and performance with support for:
+  - **Multiple address inputs**
+  - **Multiple memory arrays**
+  - Advanced operation modes:  
+    - **Fast Page Mode**,  
+    - **Extended Data Out (EDO)**,  
+    - **Static Column Mode**
+- Typical memory size is **4K** (4096 x 1-bit), providing 4096 addressable locations with 1-bit word size.
+
+  <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/2G.png" alt="2G" width="350"/>
+  <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/2G%20(2).png" alt="2G" width="250"/>
+
+#### Advantages:
+
+- Using a single transistor reduces **dynamic power consumption** compared to 3-transistor cells.
+- Storing individual bits in separate transistors allows for **compact storage**.
+- However, more transistors per wordline increase **resistance**, which can **decrease frequency**.
+- **Solution**: Replicate the memory structure (dual arrays).
+  - Enables **double data extraction** from both arrays.
+  - Allows **single-bit access** by disabling one of the arrays.
+    <div style="display: flex; gap: 10px;">
+  <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193738.png" alt="Image 1" width="200"/>
+  <img src="[https://example.com/image2.png](https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193738.png)" alt="Image 2" width="200"/>
+</div>
+
+#### Address & Control:
+
+- **Row Count**: 64 → requires **6-bit address bus**
+- **Column Count**: 32 → accessed using **6 pins total**
+- Additional control signals:
+  - **CAS** (Column Address Strobe)
+  - **RAS** (Row Address Strobe)
+  - Used for **address multiplexing**
+
+#### Disadvantages:
+
+- No clock usage.
+- Still limited memory access speed compared to later generations.
+
+---
+
+### Third Generation DRAM Cell:
 
