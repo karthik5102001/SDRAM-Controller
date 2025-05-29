@@ -133,7 +133,6 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 ### Second Generation DRAM Cell
 
 - The major difference from the first generation is the use of a **single transistor per cell** to store data.
-  <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Single%20T.png" alt="1T" width="200"/>
 - Offers improvements in flexibility and performance with support for:
   - **Multiple address inputs**
   - **Multiple memory arrays**
@@ -142,7 +141,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
     - **Extended Data Out (EDO)**,  
     - **Static Column Mode**
 - Typical memory size is **4K** (4096 x 1-bit), providing 4096 addressable locations with 1-bit word size.
-
+  <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Single%20T.png" alt="1T" width="200"/>
   <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/2G.png" alt="2G" width="350"/>
   <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/2G%20(2).png" alt="2G" width="250"/>
 
