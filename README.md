@@ -69,7 +69,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 ---
 
-### First Generation DRAM Cell
+#### First Generation DRAM Cell
 
 - Size: **1024 bits**
 - Configuration: **32 rows × 32 columns**
@@ -136,7 +136,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 ---
 
-### Second Generation DRAM Cell
+#### Second Generation DRAM Cell
 
 - The major difference from the first generation is the use of a **single transistor per cell** to store data.
 - Offers improvements in flexibility and performance with support for:
@@ -181,7 +181,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 ---
 
-### Third Generation DRAM Cell:
+#### Third Generation DRAM Cell:
 
 We have **multiple BANKS instead of arrays** to improve pipelining during memory access.
 
