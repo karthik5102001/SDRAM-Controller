@@ -177,3 +177,29 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 ### Third Generation DRAM Cell:
 
+We have **multiple BANKS instead of arrays** to improve pipelining during memory access.
+
+**Memory Matrix Structure**:  
+- **(4096 x 256 x 16)** → *(rows × columns × data width)*  
+  - `4096`: Number of rows  
+  - `256`: Number of columns  
+  - `16`: Number of arrays or **I/O data bus width**  
+    - We can write or read 16 bits at a time.  
+    - "16 arrays" means there are 16 bit-lines available for simultaneous access → **16-bit data bus**.
+
+So, a **single memory matrix** contains 256 columns and 4096 rows, and all 16 arrays are combined to form a **BANK**.
+
+> **Advantage of Multiple Banks**:  
+> If one bank is busy (e.g., doing preprocessing or refresh), other banks can still handle read/write operations — improving performance via parallelism.
+
+**Total Memory**:  
+`4096 rows × 256 columns × 16 bits = 16,777,216 bits = 2 MB`
+
+**Architecture Features**:  
+- **Independent Row and Column MUX**  
+- **Auto Refresh Logic**:  
+  - Unlike second-generation DRAM, we **do not need to supply a column address** before refresh.  
+  - SDRAM includes a **built-in refresh counter**, and we simply issue a **refresh command**.
+- **Synchronous DRAM (SDRAM)**:  
+  - Clock is added for synchronization — hence **"synchronous"**.  
+  - We send commands, and the **controller handles signal transmission to SDRAM**.
