@@ -1,5 +1,11 @@
 # SDRAM Controller
 
+## Table of Contents
+
+- [First Generation DRAM cell](#first-generation-dram-cell)
+- [Second Generation DRAM cell](#second-generation-dram-cell)
+- [Third Generation DRAM cell](#third-generation-dram-cell)
+
 ## Overview
 
 This README describes the basic principles of an SDRAM (Synchronous Dynamic Random-Access Memory) controller design, including operations like writing, reading, and refreshing DRAM cells. It also covers technical insights into DRAM cell behavior and structure.
@@ -51,7 +57,7 @@ Reading is a **destructive operation**:
 
 Due to **leakage** and destructive reads, **refreshing** is required.
 
-### Types of Refresh:
+## Types of Refresh:
 - **Auto Refresh**: Performed during read/write operations.
 - **Self Refresh**: Triggered during power-down or frequency changes.
 
@@ -63,7 +69,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 ---
 
-## First Generation DRAM Cell
+### First Generation DRAM Cell
 
 - Size: **1024 bits**
 - Configuration: **32 rows × 32 columns**
