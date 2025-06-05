@@ -179,6 +179,8 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 We have **multiple BANKS instead of arrays** to improve pipelining during memory access.
 
+<img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/3G.png" alt="3G" width="350"/>
+
 **Memory Matrix Structure**:  
 - **(4096 x 256 x 16)** → *(rows × columns × data width)*  
   - `4096`: Number of rows  
@@ -203,3 +205,6 @@ So, a **single memory matrix** contains 256 columns and 4096 rows, and all 16 ar
 - **Synchronous DRAM (SDRAM)**:  
   - Clock is added for synchronization — hence **"synchronous"**.  
   - We send commands, and the **controller handles signal transmission to SDRAM**.
+
+ <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/CMD_3G.png" alt="Commands" width="450"/>
+  
