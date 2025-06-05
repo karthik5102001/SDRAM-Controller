@@ -69,7 +69,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 ---
 
-#### First Generation DRAM Cell
+## First Generation DRAM Cell
 
 - Size: **1024 bits**
 - Configuration: **32 rows × 32 columns**
@@ -84,7 +84,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193820.png" alt="Micro Archi" width="350"/>
 
-## 3 Transistor DRAM Cell
+### 3 Transistor DRAM Cell
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/3T%20DRAM%20Cell.png" alt="3T DRAM Cell" width="350"/>
 - It consist of separate column and row lines for read and write.
@@ -102,7 +102,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 ---
 
-##  WRITE Operation (1K DRAM Cell)
+###  WRITE Operation (1K DRAM Cell)
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/write.png" alt="Write Waveform" width="350"/>
 
@@ -117,7 +117,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 ---
 
-##  REFRESH Operation (1K DRAM Cell)
+###  REFRESH Operation (1K DRAM Cell)
 
 <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/ref.png" alt="Refresh Waveform" width="350"/>
 
@@ -129,14 +129,14 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
 
 ---
 
-## Disadvantage 
+### Disadvantage 
 - No Clock, will restrict the speed of operation.
 - Lesser memory access.
 - Separate Row and Column pins, which further if we need to improve the design (adding more memory) we have to increase the pins, which increase the space.
 
 ---
 
-#### Second Generation DRAM Cell
+## Second Generation DRAM Cell
 
 - The major difference from the first generation is the use of a **single transistor per cell** to store data.
 - Offers improvements in flexibility and performance with support for:
@@ -152,7 +152,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
   <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/2G.png" alt="2G" width="350"/>
   <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/2G%20(2).png" alt="2G" width="250"/>
 
-## Advantages:
+### Advantages:
 
 - Using a single transistor reduces **dynamic power consumption** compared to 3-transistor cells.
 - Storing individual bits in separate transistors allows for **compact storage**.
@@ -165,7 +165,7 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
   <img src="https://github.com/karthik5102001/SDRAM-Controller/blob/main/Img/Screenshot%202025-05-26%20193738.png" alt="Image 2" width="200"/>
 </div>
 
-## Address & Control:
+### Address & Control:
 
 - **Row Count**: 64 → requires **6-bit address bus**
 - **Column Count**: 32 → accessed using **6 pins total**
@@ -174,14 +174,14 @@ For a design with **4096 rows** and a **64ms refresh window**, the refresh inter
   - **RAS** (Row Address Strobe)
   - Used for **address multiplexing**
 
-## Disadvantages:
+### Disadvantages:
 
 - No clock usage.
 - Still limited memory access speed compared to later generations.
 
 ---
 
-#### Third Generation DRAM Cell:
+## Third Generation DRAM Cell:
 
 We have **multiple BANKS instead of arrays** to improve pipelining during memory access.
 
